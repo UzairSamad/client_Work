@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "916012287346",
+    "firebase_url": "https://ballatikka-55a10-default-rtdb.firebaseio.com",
+    "project_id": "ballatikka-55a10",
+    "storage_bucket": "ballatikka-55a10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916012287346:android:5d20ab33fababcf04209eb",
+        "android_client_info": {
+          "package_name": "com.balatikka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916012287346-qc1hquh2bt8apiv6u2saj57mpk5m481r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.balatikka",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "916012287346-26k4582m0fpc4kis7fm2ohtep6kr3eee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVvUk2qJfvRhVo8w6eNReJJNobYzg-AGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916012287346-26k4582m0fpc4kis7fm2ohtep6kr3eee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
