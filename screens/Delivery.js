@@ -15,6 +15,8 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import FloatingButton from '../Components/FloatingButton';
+
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -46,13 +48,11 @@ const Delivery = () => {
       console.log(err, 'errrr')
     }
   }, [])
+  
+  
 
   const renderCard = (item) => {
-
-    console.log(item)
-    console.log(userdata, 'userdata')
     let user = JSON.parse(userdata)
-
     return (
       <>
         {user?.email === item?.item?.Customer_Details?.email ?
@@ -228,8 +228,8 @@ const Delivery = () => {
             </View> */}
           </View>
 
-          <View>
-            <TouchableOpacity
+          <View style={{flexDirection:'row-reverse'}}>
+            {/* <TouchableOpacity
               style={{
                 width: wp('20%'),
                 justifyContent: 'center',
@@ -248,7 +248,9 @@ const Delivery = () => {
                 }}>
                 Call
               </Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
+            <FloatingButton style={{bottom: 70,left:wp('90%')}} />
+
           </View>
         </View>
       </View>

@@ -12,6 +12,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import Entypo from 'react-native-vector-icons/Entypo';
 import auth from '@react-native-firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import FloatingButton from '../Components/FloatingButton';
+
 import {StackActions} from '@react-navigation/native';
 const UserDetails = props => {
   const Logout = () => {
@@ -356,8 +358,12 @@ const UserDetails = props => {
               <Ionicons name="md-globe-outline" size={26} color="#000000" />
             </View> */}
           </View>
+          <View style={{ flexDirection: 'row-reverse' }}>
+            <FloatingButton style={{ bottom: 80, left: wp('90%') }} />
 
-          <View>
+          </View>
+
+          {/* <View>
             <TouchableOpacity
               style={{
                 width: wp('20%'),
@@ -378,10 +384,10 @@ const UserDetails = props => {
                   marginLeft: 10,
                   fontSize: 20,
                 }}>
-                Calls
+                Callsss
               </Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
       </View>
     </View>

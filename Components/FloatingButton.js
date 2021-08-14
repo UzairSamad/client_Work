@@ -9,8 +9,49 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Modal from 'react-native-modal';
+import { TouchableOpacity } from 'react-native';
+
 export default class FloatingButton extends React.Component {
+  state = {
+    isVisible: false
+  }
+
+  modal = () => {
+    return (
+      <View style={{ backgroundColor: '#fff' }}>
+        <Modal isVisible={this.state.isVisible}>
+
+          <View style={{ flex: 0.3, backgroundColor: '#fff', padding: 10, borderRadius: 15, paddingVertical: 15 }}>
+            <View style={{ flexDirection: 'row', marginLeft: 25}}>
+              <Text style={{ fontSize: 20, alignSelf: 'center', marginBottom: 25 }}>Contact-us on Whatsapp</Text>
+              <TouchableOpacity onPress={_ => this.setState({ isVisible: false })}>
+                <MaterialIcons name="cancel" size={22} color="red" style={{ marginLeft: 40 }} />
+              </TouchableOpacity>
+            </View>
+
+            <Text style={{ fontSize: 18, marginBottom: 5,marginLeft:3 }}>Rawalpindi</Text>
+            <TouchableOpacity
+              onPress={_ => Linking.openURL('whatsapp://send?text=I want to order&phone=+920515170821')}
+              style={{ marginBottom: 12, flexDirection: 'row', paddingBottom: 12 }}>
+              <MaterialCommunityIcons name="whatsapp" size={22} color="green" />
+              <Text style={{ fontSize: 16, marginLeft: 5 }}>0515170821</Text>
+            </TouchableOpacity>
+            <Text style={{ fontSize: 18, marginBottom: 5 ,marginLeft:3}} >Banni</Text>
+            <TouchableOpacity
+              onPress={_ => Linking.openURL('whatsapp://send?text=I want to order&phone=+920515550822')}
+              style={{ flexDirection: 'row', paddingBottom: 12 }} >
+              <MaterialCommunityIcons name="whatsapp" size={22} color="green" />
+              <Text style={{ fontSize: 16, marginLeft: 5}}>0515550822</Text>
+
+            </TouchableOpacity>
+          </View>
+        </Modal>
+      </View>
+    )
+  }
   animation = new Animated.Value(0);
   toggleMenu = () => {
     const toValue = this.open ? 0 : 1;
@@ -91,6 +132,7 @@ export default class FloatingButton extends React.Component {
 
     return (
       <View style={[styles.container, this.props.style]}>
+        {this.modal()}
         <TouchableWithoutFeedback
           onPress={() => {
             Linking.openURL('https://balatikkahouse.com/');
@@ -102,7 +144,8 @@ export default class FloatingButton extends React.Component {
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback
           onPress={() => {
-            Linking.openURL('whatsapp://send?text=I want to order&phone=+92515170821');
+            this.setState({ isVisible: true })
+            // Linking.openURL('whatsapp://send?text=I want to order&phone=+92515170821');
           }}
         >
           <Animated.View style={[styles.button, styles.secondary, WebStyle2]}>

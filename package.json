@@ -33,6 +33,7 @@
     "react-native-image-slider": "^2.0.3",
     "react-native-image-slider-box": "^1.0.12",
     "react-native-maps": "0.28.0",
+    "react-native-modal": "^12.0.3",
     "react-native-modal-dropdown": "https://github.com/siemiatj/react-native-modal-dropdown",
     "react-native-paper": "^4.8.1",
     "react-native-raw-bottom-sheet": "^2.2.0",

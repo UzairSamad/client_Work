@@ -65,7 +65,7 @@ function Cart({cart, route}) {
         Location_parameters: {Longitude: longitude, Latitude: latitude},
         Order_Time: firestore.FieldValue.serverTimestamp(),
         GeoPoints: new firestore.GeoPoint(latitude, longitude),
-        Status: 'Purchased with Cash on Delivery',
+        Status: 'Pending',
       })
       .then(res => {
         alert('Your Order is placed');
