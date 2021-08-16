@@ -155,7 +155,7 @@ export default class FloatingButton extends React.Component {
 
         <TouchableWithoutFeedback
           onPress={() => {
-            Linking.openURL('tel:+123456789');
+            Linking.openURL('tel:0515550822');
           }}
         >
           <Animated.View style={[styles.button, styles.secondary, WebStyle]}>

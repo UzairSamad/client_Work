@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, TouchableOpacity, FlatList} from 'react-native';
+import {Text, View, TouchableOpacity, FlatList,Dimensions} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Card from '../Components/Card';
@@ -17,6 +17,8 @@ import firestore from '@react-native-firebase/firestore';
 import branchData from '../Data/Assets/branchData';
 import {styles} from './itemlistStyle';
 import {ItemCategory} from './component/itemCategory';
+const vw = Dimensions.get('window').width;
+const vh = Dimensions.get('window').height;
 
 const Itemlist = ({route, addproducts, navigation}) => {
   const Data = route.params;
@@ -213,7 +215,7 @@ const Itemlist = ({route, addproducts, navigation}) => {
             flex: 1,
           }}>
           <TouchableOpacity>
-            <AntDesign name="search1" size={30} color="#000" />
+            {/* <AntDesign name="search1" size={30} color="#000" /> */}
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -233,8 +235,10 @@ const Itemlist = ({route, addproducts, navigation}) => {
       <View
         style={{
           flex: 1.5,
+          // width:50
         }}>
         <SliderBox
+        style={{width:vw*1,height:vh*0.23}}
           images={[
             {
               uri:

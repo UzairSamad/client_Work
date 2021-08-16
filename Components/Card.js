@@ -48,6 +48,9 @@ function Card({title, image, price, qty, item, addToCart}) {
           borderTopRightRadius: 5,
           borderBottomRightRadius: 5,
           height: 180,
+          top:8
+
+
         }}>
         <View
           style={{
@@ -65,7 +68,7 @@ function Card({title, image, price, qty, item, addToCart}) {
             {title}
           </Text>
           <TouchableOpacity style={{marginRight: '8%', marginTop: '3%'}}>
-            <AntDesign name="staro" size={25} color="#121212" />
+            {/* <AntDesign name="staro" size={25} color="#121212" /> */}
           </TouchableOpacity>
         </View>
 
@@ -80,6 +83,8 @@ function Card({title, image, price, qty, item, addToCart}) {
           style={{
             height: '40%',
             justifyContent: 'flex-end',
+            marginTop:7,
+            paddingHorizontal:12
           }}>
           <View
             style={{
@@ -104,10 +109,14 @@ function Card({title, image, price, qty, item, addToCart}) {
                   justifyContent: 'center',
                   alignItems: 'center',
                   flexDirection: 'row',
-                  height: 30,
+                  // height: 30,
                   marginLeft: 40,
                   borderRadius: 10,
                   backgroundColor: '#f90000',
+                  paddingVertical:6,
+                  paddingHorizontal:5
+
+
                 }}
                 onPress={() => {
                   Addtocart();
@@ -115,8 +124,8 @@ function Card({title, image, price, qty, item, addToCart}) {
                 <Text
                   style={{
                     color: '#fffdff',
-                    marginLeft: 10,
-                    fontSize: 20,
+                    // marginLeft: 10,
+                    fontSize: 16,
                   }}>
                   Add
                 </Text>

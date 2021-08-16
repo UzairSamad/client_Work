@@ -7,6 +7,8 @@ import {
   ScrollView,
   StyleSheet,
   TouchableOpacity,
+  KeyboardAvoidingView,
+  Dimensions
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -19,7 +21,8 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FloatingButton from '../Components/FloatingButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+const vw = Dimensions.get('window').width;
+const vh = Dimensions.get('window').height;
 const DeliveryAddress = () => {
   const [adresData, setAddressData] = useState({ area: '', city: '', address: '' })
   const [userAddress, setUserAddress] = useState([])
@@ -121,6 +124,8 @@ const DeliveryAddress = () => {
      
         </View>
         :
+        <ScrollView style={{flex:1}}>
+
         <View
           style={{
             flex: 1,
@@ -138,9 +143,11 @@ const DeliveryAddress = () => {
               <MaterialIcons name="arrow-back" size={30} color="#4fb853" />
             </TouchableOpacity>
           </View>
+
           <View
             style={{
-              flex: 3,
+              flex: 4,
+              marginTop:15
             }}>
             <Text
               style={{
@@ -215,8 +222,9 @@ const DeliveryAddress = () => {
             <View
               style={{
                 width: wp('83%'),
-                marginTop: 2,
+                marginTop: vh*0.03,
                 alignSelf: 'center',
+
               }}>
               <Text
                 style={{
@@ -231,6 +239,7 @@ const DeliveryAddress = () => {
           <View
             style={{
               flex: 1,
+              marginTop: vh*0.02,
             }}>
             <TouchableOpacity
               onPress={_ => handleSave()}
@@ -255,15 +264,18 @@ const DeliveryAddress = () => {
               </Text>
             </TouchableOpacity>
           </View>
+
           <View
             style={{
               flex: 2.6,
               alignSelf: 'center',
+              marginTop: vh*0.07,
+
             }}>
             <Image
               style={{
-                width: 225,
-                height: 200,
+                width: vw*0.43,
+                height: vh*0.2
               }}
               source={require('../Assets/logo.png')}
             />
@@ -272,6 +284,8 @@ const DeliveryAddress = () => {
             style={{
               flex: 0.6,
               justifyContent: 'center',
+              marginTop: vh*0.18,
+
             }}>
             <View
               style={{
@@ -334,6 +348,8 @@ const DeliveryAddress = () => {
             </View>
           </View>
         </View>
+        </ScrollView>
+
 
       }
     </>
